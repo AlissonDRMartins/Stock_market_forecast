@@ -3,7 +3,6 @@ from prophet import Prophet
 from prophet.plot import plot_plotly
 from dotenv import load_dotenv as env
 
-env()
 
 @st.cache_data
 def search_stocks(base_url, symbol):
@@ -21,13 +20,15 @@ def get_ticker(ticker_name, base_url):
     return data_frame
 
 
+env()
 st.title('Stock Dashboard')
 API_key = os.getenv('API_KEY')
 base_url = f'https://www.alphavantage.co/query?&apikey={API_key}'
-
 symbol = st.sidebar.text_input('Ticker name')
+
 if symbol:
     data = search_stocks(base_url=base_url, symbol=symbol)
+
     if 'bestMatches' in data:
         stock_options = [f"{match['1. symbol']} - {match['2. name']}" for match in data["bestMatches"]]
         escolha_sua_acao = st.sidebar.selectbox('Ticker selection', stock_options)
@@ -40,7 +41,7 @@ if symbol:
             df.columns = ['Date', 'Opening', 'High', 'Low', 'Closing', 'Volume']
             df['Date'] = pd.to_datetime(df['Date'])
             df['Closing'] = df['Closing'].astype(float)
-            
+
             start_date = pd.to_datetime(st.sidebar.date_input('Start Date',
                                                               value=df['Date'].min(), 
                                                               min_value=df['Date'].min(),
