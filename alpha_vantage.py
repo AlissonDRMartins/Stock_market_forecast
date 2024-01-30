@@ -1,7 +1,10 @@
 import pandas as pd
-import requests
+import requests, os
 import streamlit as st
 import plotly.express as px
+from dotenv import load_dotenv as env
+
+env()
 
 @st.cache_data
 def busca_acoes(base_url, symbol):
@@ -20,7 +23,7 @@ def pegar_ativo(nome_do_ativo, base_url):
 
 
 st.title('Stock Dashboard')
-API_key = 'F0XG30KR990WITCN'
+API_key = os.getenv('API_KEY')
 base_url = f'https://www.alphavantage.co/query?&apikey={API_key}'
 
 symbol = st.sidebar.text_input('Ticker name')
