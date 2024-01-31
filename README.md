@@ -49,7 +49,7 @@ API_KEY=your_api_key
 ```
 5. Start Streamlit in your terminal with
 ```bash
-streamlit run Stock-Dashboard-Analysis
+streamlit run main.py
 ```
 
 ## Usage
