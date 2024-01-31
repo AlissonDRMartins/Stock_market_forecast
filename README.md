@@ -43,7 +43,7 @@ source venv/Scripts/ativate
 ```bash
 pip install -r requirements.txt
 ```
-4. Get your API key from [Alpha Vantage]((https://www.alphavantage.co/support/#api-key) and store it in a `.env` file in the project root:
+4. Get your API key from [Alpha Vantage](https://www.alphavantage.co/support/#api-key) and store it in a `.env` file in the project root:
 ```bash
 API_KEY=your_api_key
 ```
