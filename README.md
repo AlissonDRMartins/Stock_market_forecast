@@ -1,7 +1,7 @@
 # Stock Dashboard Analysis
 
 This Stock Dashboard is a simple yet powerful tool to visualize historical stock data, make stock selections, and generate future stock price predictions using the Alpha Vantage API, Streamlit, Plotly, and the Prophet forecasting model.
-![Sample](image.png)
+![Sample](sample.png)
 ## Overview
 
 1. [Features](#features)
